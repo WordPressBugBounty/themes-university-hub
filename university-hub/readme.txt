@@ -3,7 +3,7 @@
 Contributors: wenthemes
 Tags: one-column, two-columns, three-columns, left-sidebar, right-sidebar, custom-background, custom-menu, featured-images, full-width-template, translation-ready, theme-options, threaded-comments, footer-widgets, custom-logo, education, rtl-language-support
 Requires at least: 5.9
-Tested up to: 6.8
+Tested up to: 6.9
 Requires PHP: 5.6
 License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
@@ -21,6 +21,9 @@ University Hub, an Education theme by WEN Themes, is a responsive WordPress them
 3. Click Activate to use your new theme right away.
 
 == Changelog ==
+
+= 2.3.1 - Jan 06 2026 =
+* WP 6.9 compatibility
 
 = 2.3 - Jul 17 2025 =
 * Add: Tiktok, Bluesky, X.com, Tel, Thread, Etsy, Deviantart, Behance, Bandcamp, Snapchat, Spotify, Telegram and other social icons
