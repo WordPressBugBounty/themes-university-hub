@@ -1032,12 +1032,7 @@ class Breadcrumb_Trail {
 		if ( $terms && ! is_wp_error( $terms ) ) {
 
 			// Sort the terms by ID and get the first category.
-			if ( function_exists( 'wp_list_sort' ) ) {
-				$terms = wp_list_sort( $terms, 'term_id' );
-			}
-			else {
-				usort( $terms, '_usort_terms_by_ID' );
-			}
+			$terms = wp_list_sort( $terms, 'term_id' );
 
 			$term = get_term( $terms[0], $taxonomy );
 

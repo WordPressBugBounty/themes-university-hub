@@ -176,12 +176,7 @@ function university_hub_the_term_link_single( $taxonomy = 'category', $before = 
 	}
 
 	// Sort the terms by ID and get the first category.
-	if ( function_exists( 'wp_list_sort' ) ) {
-		$terms = wp_list_sort( $terms, 'term_id' );
-	}
-	else {
-		usort( $terms, '_usort_terms_by_ID' );
-	}
+	$terms = wp_list_sort( $terms, 'term_id' );
 
 	$term = array_shift( $terms );
 

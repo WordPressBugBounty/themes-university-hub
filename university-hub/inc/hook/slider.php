@@ -167,6 +167,8 @@ if ( ! function_exists( 'university_hub_render_featured_slider' ) ) :
 		}
 
 		$slide_data['slides'] = 'article';
+		// Slide titles carry the theme's own <span> markup; everything else is escaped by Cycle2.
+		$slide_data['tmpl-raw-keys'] = 'buttons title';
 
 		$slide_attributes_text = '';
 		foreach ( $slide_data as $key => $item ) {
@@ -212,14 +214,15 @@ if ( ! function_exists( 'university_hub_render_featured_slider' ) ) :
 					$url = esc_url( $slide['url'] );
 				}
 
-				// Fixing title.
+				// Fixing title: text after <br> goes in a span. Each part is escaped, so the span is the
+				// only markup; the slider is told to render this title as HTML (tmpl-raw-keys).
 				$title = htmlspecialchars_decode( $slide['title'] );
 				$exploded = explode( '<br>', $title );
 				if ( ! empty( $exploded ) ) {
 					$first_part = array_shift( $exploded );
 					$exploded = array_filter( array_map( 'trim', $exploded ) );
 					$second_part = implode( ' ', $exploded );
-					$title = $first_part . '<span>' . $second_part . '</span>';
+					$title = esc_html( $first_part ) . '<span>' . esc_html( $second_part ) . '</span>';
 				}
 				$title = htmlspecialchars( $title );
 
